@@ -40,12 +40,12 @@ Internally Ether is represented as an unsigned integer denominated in wei.
 Software application that helps managing blockchain account
 
 ## Concepts
-### Whisper 
-P2P messaging service
-https://www.mycryptopedia.com/ethereum-whisper-a-detailed-guide/ 
-### Swarm
-P2P storage network
-https://www.ethswarm.org/
++ Whisper. P2P messaging service. [Ref](https://www.mycryptopedia.com/ethereum-whisper-a-detailed-guide/)
++ **Swarm** P2P storage network. [Ref](https://www.ethswarm.org/)
++ **Ether** Ethereum coin. 
++ **wei** 1 Ether is  1,000,000,000,000,000,000 wei
++ **Faucet** Where you are paid a minuscule amount of ETH with basic ad viewing and clicking.
++ **Gas** contract execution resources consumption max
 
 ### Gas
 
@@ -66,3 +66,28 @@ Because a contract account does not have a private key, it cannot initiate a tra
     https://faucet.kyber.network/ (GitHub users only)
     https://ipfs.io/ipfs/QmVAwVKys271P5EQyEfVSxm7BJDKWt42A2gHvNmxLjZMps/
     http://faucet.bitfwd.xyz/
+
+## Ethereum networks
++ Multiple networks ([Yellow paper](https://ethereum.github.io/yellowpaper/paper.pdf) implementation) that may or may no interoperate between them: Ethereum, Ethereum clasic, Ella, Expanse,...
++ Nodes types
+  + Full main node: parity, Geth, ...
+  + Development driven
+    + Testnet node
+    + Local private. ex [Ganache](https://www.trufflesuite.com/ganache)
+    + Cloud based ethereum client. Example [Infura](https://infura.io/)
+  + Remote client. Do not store a local copy of the blockchain or do any validation (Examples: metamask, Emerald wallet). They offer 
+    + Create and broadcast transactions.
+    + Offer an api such as web3.js
+  + Light clients. 
+    + Validate block headers 
+    + Use Merkle proofs to validate the inclusion of transactions in the blockchain and determine their effects, giving them a similar level of security to a full node.
+  
+
+## wallet vs remote clients
+1. Both offer transaction functionality.
+2. The remote client also offer an api such as web3.js
+
+
+
+
+
