@@ -46,8 +46,18 @@ Software application that helps managing blockchain account
 + **wei** 1 Ether is  1,000,000,000,000,000,000 wei
 + **Faucet** Where you are paid a minuscule amount of ETH with basic ad viewing and clicking.
 + **Gas** contract execution resources consumption max
-
-### Gas
++ **trapdoor functions** In cryptography mathematical functions easily inverted if you know some secret information.
++ **Hash function** Any function taht can map data of arbitrary size to data of fixed size
+  + Accepts a pre-image/message/input data
+  + outputs a hash
++ **Cryptographic hash function** is a hash function with the following properties
+  + one-way
+  + Deterministic. A given input always produce the same hash
+  + Verifiable. Computing the hash of a message is efficient
+  + Noncorrelation
+  + Irreversibility. Computing the message from its hash is infeasible 
+  + Collision protection. Two different messages produce the same hash
++ **ICAP** Inter exchange Client Address Protocol is an ethereum address encoding partly compatible with the International Bank Account Number (IBAN) encoding, offering a versatile, checksummed, and interoperable encoding for ethereum addresses
 
 ### Accounts
 #### Externally owned account (EOA)
@@ -86,6 +96,32 @@ Because a contract account does not have a private key, it cannot initiate a tra
 ## wallet vs remote clients
 1. Both offer transaction functionality.
 2. The remote client also offer an api such as web3.js
+
+## Cryptography
+### refs
++ Discrete logarithm problem
++ Prime factorization
++ Elliptic curve cryptography
+
+### Keys generation process
+1. Find a secure source of entropy or randomness. Picking a number between 1 and $2^{256}$. This is usually achieved by feeding a large string into a 256-bit hash algorithm such as Keccak-256 or SHA-256
+2. Generate public key from private. This is done applying the elliptic curve multiplication (K1 = k2 * G) to the private key:
+   1. "K1" the public key
+   2. "k2" the private key
+   3. "*" special elliptic curve "multiplication"
+   4. "G" constant point called the generator point.
+3. Generate Ethereum address. 
+   1. Apply Keccak-256 hash function to the public key
+   2. Keep only the last 20 bytes of the hash and that is the ethereum address
+
+### Ethereum address formats
++ Raw. Full hexadecimal Address (20 bytes)
++ ICAP. Ethereum standard format
+  + Direct
+  + Basic
+  + Indirect
++ EIP-55
+
 
 
 
